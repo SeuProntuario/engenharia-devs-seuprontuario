@@ -1,45 +1,66 @@
 <ion-menu [content]="content" id="authenticated">
-    <ion-header no-border>
-        <ion-toolbar transparent>
-            <ion-title text-center>
-                <img height="40" src="assets/imgs/atla-red.png">
-            </ion-title>
-        </ion-toolbar>
-        <ion-list no-line>
-            <button color="space" menuClose ion-item (click)="openPage('SettingsPage')">
-                {{username}}
-            </button>
-        </ion-list>
-    </ion-header>
+  <ion-header no-border>
+    <ion-toolbar transparent>
+      <ion-title text-center>
+        <img height="40" src="assets/img/ica-slidebox-img-4.png" />
+      </ion-title>
+    </ion-toolbar>
+    <ion-list no-line>
+      <button
+        color="space"
+        menuClose
+        ion-item
+        (click)="openPage('SettingsPage')"
+      >
+        {{ username }}
+      </button>
+    </ion-list>
+  </ion-header>
 
-    <ion-content>
-        <ion-item>
-            <ion-label stacked>Perfil</ion-label>
-            <ion-select [(ngModel)]="profileSelected" (ionChange)="changeSelected()">
-                <ion-option *ngFor="let profile of profiles" [value]="profile">{{profile.$showType}}</ion-option>
-            </ion-select>
-        </ion-item>
-        <ion-list *ngIf=privatePages>
-            <button color="space" menuClose lo-line ion-item *ngFor="let p of privatePages" (click)="openPage(p.component)">
-                {{p.title}}
-            </button>
-        </ion-list>
-    </ion-content>
+  <ion-content>
+    <ion-item>
+      <ion-label stacked>Perfil</ion-label>
+      <ion-select [(ngModel)]="profileSelected" (ionChange)="changeSelected()">
+        <ion-option *ngFor="let profile of profiles" [value]="profile">{{
+          profile.$showType
+        }}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-list *ngIf="privatePages">
+      <button
+        color="space"
+        menuClose
+        lo-line
+        ion-item
+        *ngFor="let p of privatePages"
+        (click)="openPage(p.component)"
+      >
+        {{ p.title }}
+      </button>
+    </ion-list>
+  </ion-content>
 
-    <ion-footer>
-        <ion-navbar>
-            <ion-buttons center>
-                <ion-grid>
-                    <ion-row justify-content-center>
-                        <button ion-button color="secondary" block round (click)="logout()" menuToggle>
-                            <ion-icon name="log-out" item-end></ion-icon>
-                            Sair
-                        </button>
-                    </ion-row>
-                </ion-grid>
-            </ion-buttons>
-        </ion-navbar>
-    </ion-footer>
+  <ion-footer>
+    <ion-navbar>
+      <ion-buttons center>
+        <ion-grid>
+          <ion-row justify-content-center>
+            <button
+              ion-button
+              color="secondary"
+              block
+              round
+              (click)="logout()"
+              menuToggle
+            >
+              <ion-icon name="log-out" item-end></ion-icon>
+              Sair
+            </button>
+          </ion-row>
+        </ion-grid>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-footer>
 </ion-menu>
 
 <ion-nav #content [root]="rootPage"></ion-nav>

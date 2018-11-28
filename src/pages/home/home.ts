@@ -19,6 +19,28 @@ import {
   templateUrl: "home.html"
 })
 export class HomePage {
+  optionSelected: string;
+  options = [
+    {
+      value: "patient",
+      viewValue: "Paciente"
+    },
+    {
+      value: "professional",
+      viewValue: "Profissional"
+    },
+    {
+      value: "dependent",
+      viewValue: "Dependente"
+    }
+  ];
+  nextEvent = {
+    local: "Clinica do Coração",
+    hour: "9:41",
+    date: "03/03/2019",
+    description: "Consulta com Dr. Emílio"
+  };
+  n = 2;
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -29,5 +51,13 @@ export class HomePage {
 
   ionViewDidLoad() {
     console.log("ionViewDidLoad HomePage");
+  }
+
+  getItems() {
+    console.log("Searchbar Home");
+  }
+
+  openPage(page) {
+    this.navCtrl.push(page);
   }
 }
