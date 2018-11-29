@@ -12,7 +12,7 @@
           ion-button
           icon-left
           text-uppercase
-          (click)="createDependent()"
+          (click)="showDependentForm()"
         >
           <ion-icon name="add"></ion-icon>Adicionar Dependente
         </button>
@@ -24,7 +24,7 @@
           <button
             ion-item
             *ngFor="let dependent of dependents"
-            (click)="showDependent(dependent)"
+            (click)="showDependentForm(dependent)"
           >
             <ion-avatar item-start>
               <img [src]="dependent.avatar" />

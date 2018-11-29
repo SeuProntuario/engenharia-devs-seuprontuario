@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 
 /**
- * Generated class for the DependentPage page.
+ * Generated class for the DependentsPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,10 +10,10 @@ import { IonicPage, NavController, NavParams } from "ionic-angular";
 
 @IonicPage()
 @Component({
-  selector: "page-dependent",
-  templateUrl: "dependent.html"
+  selector: "page-dependents",
+  templateUrl: "dependents.html"
 })
-export class DependentPage {
+export class DependentsPage {
   dependents = [
     {
       name: "Mateus Ribeiro da Silva",
@@ -28,7 +28,7 @@ export class DependentPage {
     {
       name: "João Castanhare Ribeiro",
       avatar: "",
-      kinship: "mãe"
+      kinship: "pai"
     }
   ];
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
@@ -37,11 +37,7 @@ export class DependentPage {
     console.log("ionViewDidLoad DependentPage");
   }
 
-  createDependent() {
-    this.navCtrl.push("DependentCreatePage");
-  }
-
-  showDependent(dependent) {
+  showDependentForm(dependent = null) {
     this.navCtrl.push("DependentShowPage", { dependent: dependent });
   }
 }

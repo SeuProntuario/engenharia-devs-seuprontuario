@@ -1,0 +1,48 @@
+<!--
+  Generated template for the VaccinationStepPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{ step }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+  <ion-item color="secondary">
+    <p text-center text-wrap>
+      Para vacinar, basta ir a um posto ou Unidade Básica de Saúde (UBS) com o
+      cartão da criança. O ideal é que toda dose seja administrada na idade
+      recomendada.
+    </p>
+  </ion-item>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6 *ngFor="let period of periods">
+        <ion-card (click)="openList(period)">
+          <ion-card-header text-center text-uppercase>
+            {{ period.name }}</ion-card-header
+          >
+          <ion-card-content no-padding>
+            <circle-progress
+              [percent]="period.value"
+              [radius]="100"
+              [titleFontSize]="50"
+              [showSubtitle]="false"
+              [outerStrokeWidth]="16"
+              [innerStrokeWidth]="8"
+              [outerStrokeColor]="'#78C000'"
+              [innerStrokeColor]="'#C7E596'"
+              [animation]="true"
+              [animationDuration]="300"
+              [responsive]="true"
+              [unitsFontSize]="35"
+            ></circle-progress>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

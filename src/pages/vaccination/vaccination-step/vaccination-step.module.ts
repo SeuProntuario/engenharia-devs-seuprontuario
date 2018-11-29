@@ -1,12 +1,12 @@
 import { NgModule } from "@angular/core";
 import { IonicPageModule } from "ionic-angular";
-import { VaccinationPage } from "./vaccination";
+import { VaccinationStepPage } from "./vaccination-step";
 import { NgCircleProgressModule } from "ng-circle-progress";
 
 @NgModule({
-  declarations: [VaccinationPage],
+  declarations: [VaccinationStepPage],
   imports: [
-    IonicPageModule.forChild(VaccinationPage),
+    IonicPageModule.forChild(VaccinationStepPage),
     NgCircleProgressModule.forRoot({
       radius: 50,
       outerStrokeWidth: 10,
@@ -17,4 +17,4 @@ import { NgCircleProgressModule } from "ng-circle-progress";
     })
   ]
 })
-export class VaccinationPageModule {}
+export class VaccinationStepPageModule {}

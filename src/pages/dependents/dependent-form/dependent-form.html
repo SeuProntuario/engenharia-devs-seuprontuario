@@ -1,0 +1,66 @@
+<form [formGroup]="form">
+  <ion-label stacked> Nome</ion-label>
+  <ion-item no-padding>
+    <ion-label> <ion-icon name="contact"></ion-icon></ion-label>
+    <ion-input formControlName="name" type="text" name="name"></ion-input>
+  </ion-item>
+
+  <ion-label stacked>Email</ion-label>
+  <ion-item no-padding>
+    <ion-label> <ion-icon name="mail"></ion-icon></ion-label>
+    <ion-input formControlName="email" type="text" name="email"></ion-input>
+  </ion-item>
+
+  <ion-label stacked>CPF</ion-label>
+  <ion-item no-padding>
+    <ion-label> <ion-icon name="mail"></ion-icon></ion-label>
+    <ion-input formControlName="cpf" type="text" name="cpf"></ion-input>
+  </ion-item>
+
+  <ion-label stacked>Data de Nascimento</ion-label>
+  <ion-item no-padding>
+    <ion-label> <ion-icon name="calendar"></ion-icon></ion-label>
+    <ion-input formControlName="birth" type="text" name="birth"></ion-input>
+  </ion-item>
+
+  <ion-label stacked>Endereço</ion-label>
+  <ion-item no-padding>
+    <ion-label> <ion-icon name="calendar"></ion-icon></ion-label>
+    <ion-input formControlName="address" type="text" name="address"></ion-input>
+  </ion-item>
+
+  <ion-label stacked>Telefone</ion-label>
+  <ion-item no-padding>
+    <ion-label> <ion-icon name="calendar"></ion-icon></ion-label>
+    <ion-input formControlName="phone" type="text" name="phone"></ion-input>
+  </ion-item>
+
+  <ion-label stacked>Tipo Sanguíneo</ion-label>
+  <ion-item no-padding>
+    <ion-label> <ion-icon name="calendar"></ion-icon></ion-label>
+    <ion-input formControlName="blood" type="text" name="blood"></ion-input>
+  </ion-item>
+
+  <ion-label stacked>Doador de órgãos?</ion-label>
+  <ion-item no-padding>
+    <ion-label> <ion-icon name="calendar"></ion-icon></ion-label>
+    <ion-input formControlName="donor" type="text" name="donor"></ion-input>
+  </ion-item>
+
+  <ion-label stacked>Convênios</ion-label>
+  <ion-item no-padding>
+    <ion-label> <ion-icon name="calendar"></ion-icon></ion-label>
+    <ion-input
+      formControlName="covenant"
+      type="text"
+      name="covenant"
+    ></ion-input>
+  </ion-item>
+
+  <ion-label stacked>Necessidades Especiais?</ion-label>
+  <ion-item no-padding>
+    <ion-label> <ion-icon name="calendar"></ion-icon></ion-label>
+    <ion-input formControlName="special" type="text" name="special"></ion-input>
+  </ion-item>
+  <button color="secondary" ion-button type="submit" block>SALVAR</button>
+</form>
