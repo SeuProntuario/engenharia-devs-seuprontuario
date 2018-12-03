@@ -5,14 +5,41 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>enchiridion</ion-title>
-  </ion-navbar>
-
+  <ion-navbar> <ion-title>Meus Prontuários</ion-title> </ion-navbar>
 </ion-header>
 
-
-<ion-content padding>
-
+<ion-content no-padding>
+  <ion-item color="pront" no-lines>
+    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  </ion-item>
+  <ion-card *ngFor="let ench of enchiridion">
+    <ion-card-header> {{ ench.name }}</ion-card-header>
+    <ion-card-content no-padding>
+      <ion-row>
+        <ion-col col-7>
+          <h2>{{ ench.local }}</h2>
+          <h3>{{ ench.medic }}</h3>
+          <p>{{ ench.date }} às {{ ench.hour }}</p>
+        </ion-col>
+        <ion-col col-5>
+          <button
+            color="pront"
+            ion-button
+            icon-left
+            small
+            block
+            item-end
+            (click)="openEnch(ench)"
+          >
+            <ion-icon name="custom-view"></ion-icon>
+            Visualizar
+          </button>
+          <button color="pront" ion-button icon-left small block item-end>
+            <ion-icon name="custom-share"></ion-icon>
+            Compartilhar
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

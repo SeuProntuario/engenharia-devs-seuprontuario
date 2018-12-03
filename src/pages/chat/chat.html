@@ -5,14 +5,22 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>chat</ion-title>
-  </ion-navbar>
-
+  <ion-navbar> <ion-title>Minhas Conversas</ion-title> </ion-navbar>
 </ion-header>
 
-
-<ion-content padding>
-
+<ion-content no-padding>
+  <div padding>
+    <button color="pront" ion-button block icon-left>
+      <ion-icon name="add"></ion-icon>
+      NOVA CONVERSA
+    </button>
+  </div>
+  <button ion-item *ngFor="let talk of talks">
+    <ion-avatar item-start>
+      <img src="assets/icon/avatar (1).svg" />
+    </ion-avatar>
+    <h2>Woody</h2>
+    <p text-wrap>This town ain't big enough for the two of us!</p>
+    <ion-note item-end>3:43 pm</ion-note>
+  </button>
 </ion-content>

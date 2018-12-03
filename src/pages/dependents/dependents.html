@@ -2,12 +2,12 @@
   <ion-navbar> <ion-title>Meus Dependentes</ion-title> </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content no-padding>
   <ion-grid>
     <ion-row>
       <ion-col>
         <button
-          color="secondary"
+          color="pront"
           block
           ion-button
           icon-left
@@ -27,7 +27,7 @@
             (click)="showDependentForm(dependent)"
           >
             <ion-avatar item-start>
-              <img [src]="dependent.avatar" />
+              <img src="assets/icon/avatar (1).svg" />
             </ion-avatar>
             <h2 text-wrap>{{ dependent.name }}</h2>
             <p>{{ dependent.kinship }}</p>

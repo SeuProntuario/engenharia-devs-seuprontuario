@@ -1,6 +1,5 @@
 // http://ionicframework.com/docs/theming/
 
-
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These
@@ -14,3 +13,83 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+ion-icon {
+  &[class*="custom-"] {
+    mask-size: contain;
+    mask-position: 50% 50%;
+    mask-repeat: no-repeat;
+    background: currentColor;
+    width: 1em;
+    height: 1em;
+  }
+
+  &[class*="custom-timeline"] {
+    mask-image: url(../assets/icon/timeline.svg);
+  }
+  &[class*="custom-notes"] {
+    mask-image: url(../assets/icon/notes.svg);
+  }
+  &[class*="custom-medic"] {
+    mask-image: url(../assets/icon/avatar.svg);
+  }
+  &[class*="custom-avatar"] {
+    mask-image: url("../assets/icon/avatar (1).svg");
+  }
+  &[class*="custom-exams"] {
+    mask-image: url(../assets/icon/medical-result.svg);
+  }
+  &[class*="custom-history"] {
+    mask-image: url(../assets/icon/medical-history.svg);
+  }
+  &[class*="custom-hospital"] {
+    mask-image: url(../assets/icon/hospital.svg);
+  }
+  &[class*="custom-chat"] {
+    mask-image: url(../assets/icon/chat.svg);
+  }
+  &[class*="custom-syringe"] {
+    mask-image: url(../assets/icon/syringe.svg);
+  }
+  &[class*="custom-id-card"] {
+    mask-image: url(../assets/icon/id-card.svg);
+  }
+  &[class*="custom-family"] {
+    mask-image: url(../assets/icon/family.svg);
+  }
+  &[class*="custom-email"] {
+    mask-image: url("../assets/icon/email (1).svg");
+  }
+  &[class*="custom-calendar"] {
+    mask-image: url("../assets/icon/calendar.svg");
+  }
+  &[class*="custom-address"] {
+    mask-image: url("../assets/icon/address.svg");
+  }
+  &[class*="custom-phone"] {
+    mask-image: url("../assets/icon/telephone.svg");
+  }
+  &[class*="custom-blood"] {
+    mask-image: url("../assets/icon/blood-type.svg");
+  }
+  &[class*="custom-organ-donation"] {
+    mask-image: url("../assets/icon/organ-donation.svg");
+  }
+  &[class*="custom-medical-insurance"] {
+    mask-image: url("../assets/icon/medical-insurance.svg");
+  }
+  &[class*="custom-disabled-people"] {
+    mask-image: url("../assets/icon/disabled-people.svg");
+  }
+  &[class*="custom-share"] {
+    mask-image: url("../assets/icon/share.svg");
+  }
+  &[class*="custom-view"] {
+    mask-image: url("../assets/icon/view.svg");
+  }
+}
+
+.toolbar-title {
+  text-overflow: unset;
+  white-space: unset;
+}

@@ -5,14 +5,57 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>consultation</ion-title>
-  </ion-navbar>
-
+  <ion-navbar> <ion-title>Minhas Consultas</ion-title> </ion-navbar>
+  <ion-item color="pront" no-lines>
+    <ion-searchbar
+      placeholder="Procurar consultas"
+      (ionInput)="getItems($event)"
+    ></ion-searchbar>
+  </ion-item>
 </ion-header>
 
+<ion-content no-padding>
+  <ion-grid padding>
+    <button
+      color="pront"
+      ion-button
+      icon-left
+      block
+      (click)="newConsultation()"
+    >
+      <ion-icon name="custom-calendar"></ion-icon>
+      MARCAR CONSULTA
+    </button>
+  </ion-grid>
 
-<ion-content padding>
-
+  <ion-card *ngFor="let consultation of consultations">
+    <ion-card-header> {{ consultation.name }}</ion-card-header>
+    <ion-card-content no-padding>
+      <ion-row>
+        <ion-col col-7>
+          <h2>{{ consultation.local }}</h2>
+          <h3>{{ consultation.medic }}</h3>
+          <p>{{ consultation.date }} às {{ consultation.hour }}</p>
+        </ion-col>
+        <ion-col col-5>
+          <button
+            color="pront"
+            ion-button
+            icon-left
+            small
+            block
+            item-end
+            (click)="openCons(consultation)"
+          >
+            <ion-icon name="custom-address"></ion-icon>
+            Ver local
+          </button>
+          <button color="pront" ion-button icon-left small block item-end>
+            <ion-icon name="custom-share"></ion-icon>
+            Compartilhar
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

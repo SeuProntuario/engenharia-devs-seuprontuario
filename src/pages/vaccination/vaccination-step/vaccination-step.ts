@@ -34,7 +34,7 @@ export class VaccinationStepPage {
     }
   ];
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.navParams.get("name");
+    this.step = this.navParams.get("name");
   }
 
   ionViewDidLoad() {

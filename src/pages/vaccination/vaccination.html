@@ -3,9 +3,9 @@
 </ion-header>
 
 <ion-content no-padding>
-  <ion-grid>
+  <ion-grid no-padding>
     <ion-row>
-      <ion-item color="secondary">
+      <ion-item color="pront">
         <ion-label>Ver como: </ion-label>
         <ion-select [(ngModel)]="optionSelected">
           <ion-option *ngFor="let option of options" [value]="option.value">{{
@@ -14,7 +14,7 @@
         </ion-select>
       </ion-item>
     </ion-row>
-    <ion-row *ngFor="let step of steps">
+    <ion-row padding *ngFor="let step of steps">
       <ion-col col-3>
         <circle-progress
           [percent]="step.value"
@@ -23,8 +23,8 @@
           [showSubtitle]="false"
           [outerStrokeWidth]="16"
           [innerStrokeWidth]="8"
-          [outerStrokeColor]="'#78C000'"
-          [innerStrokeColor]="'#C7E596'"
+          [outerStrokeColor]="'#a2ffa4'"
+          [innerStrokeColor]="'#a2ffa4'"
           [animation]="true"
           [animationDuration]="300"
           [responsive]="true"
@@ -40,3 +40,10 @@
     </ion-row>
   </ion-grid>
 </ion-content>
+<ion-footer>
+  <ion-item>
+    <p text-center text-wrap>
+      As vacinas são desbloqueadas automaticamente de acordo com sua idade
+    </p>
+  </ion-item>
+</ion-footer>
