@@ -5,14 +5,61 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>exams</ion-title>
-  </ion-navbar>
-
+  <ion-navbar> <ion-title>Meus Exames</ion-title> </ion-navbar>
 </ion-header>
 
+<ion-content no-padding>
+  <ion-item color="secondary" no-lines>
+    <ion-searchbar
+      placeholder="Buscar"
+      (ionInput)="getItems($event)"
+    ></ion-searchbar>
+  </ion-item>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6>
+        <button ion-button icon-left block color="secondary">
+          <ion-icon name="custom-calendar"></ion-icon>
+          Adicionar
+        </button>
+      </ion-col>
+      <ion-col col-6>
+        <button ion-button icon-left block color="secondary">
+          <ion-icon name="add"></ion-icon>
+          Marcar
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
-<ion-content padding>
-
+  <ion-card *ngFor="let exam of exams">
+    <ion-card-header> {{ exam.name }}</ion-card-header>
+    <ion-card-content no-padding>
+      <ion-row>
+        <ion-col col-7>
+          <h2>{{ exam.local }}</h2>
+          <h3>{{ exam.medic }}</h3>
+          <p>{{ exam.date }} às {{ exam.hour }}</p>
+        </ion-col>
+        <ion-col col-5>
+          <button
+            color="secondary"
+            ion-button
+            icon-left
+            small
+            block
+            item-end
+            (click)="openExam(exam)"
+          >
+            <ion-icon name="custom-view"></ion-icon>
+            Visualizar
+          </button>
+          <button color="secondary" ion-button icon-left small block item-end>
+            <ion-icon name="custom-share"></ion-icon>
+            Compartilhar
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

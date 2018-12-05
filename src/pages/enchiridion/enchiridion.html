@@ -9,7 +9,7 @@
 </ion-header>
 
 <ion-content no-padding>
-  <ion-item color="pront" no-lines>
+  <ion-item color="secondary" no-lines>
     <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
   </ion-item>
   <ion-card *ngFor="let ench of enchiridion">
@@ -23,7 +23,7 @@
         </ion-col>
         <ion-col col-5>
           <button
-            color="pront"
+            color="secondary"
             ion-button
             icon-left
             small
@@ -34,7 +34,7 @@
             <ion-icon name="custom-view"></ion-icon>
             Visualizar
           </button>
-          <button color="pront" ion-button icon-left small block item-end>
+          <button color="secondary" ion-button icon-left small block item-end>
             <ion-icon name="custom-share"></ion-icon>
             Compartilhar
           </button>

@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title *ngIf="exam">{{ exam.name }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+  <ion-item no-lines color="secondary" *ngIf="exam">
+    <ion-avatar item-right>
+      <img src="assets/icon/avatar (1).svg" />
+    </ion-avatar>
+    <h2>{{ exam.local }}</h2>
+    <h2>{{ exam.medic }}</h2>
+    <p>{{ exam.date }} às {{ exam.hour }}</p>
+  </ion-item>
+
+  <ion-card>
+    <ion-card-header> Imagens </ion-card-header>
+    <img src="assets/examples/ressonancia.png" />
+    <ion-card-content no-padding>
+      <ion-item *ngFor="let drug of drugs" no-lines>
+        <h3>{{ drug.name }}</h3>
+        <button color="secondary" ion-button small item-end>
+          ONDE COMPRAR
+        </button>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header> Prontuário da Consulta </ion-card-header>
+    <ion-card-content>
+      Ipsum magna ad esse occaecat aute officia sit nisi. In tempor cupidatat
+      voluptate sunt laboris anim ex. In ex tempor non Lorem labore magna sunt
+      nisi dolore. Qui consequat voluptate amet culpa.</ion-card-content
+    >
+  </ion-card>
+  <ion-fab top right edge>
+    <button ion-fab mini><ion-icon name="add"></ion-icon></button>
+    <ion-fab-list>
+      <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>
+<ion-footer padding>
+  <button icon-left ion-button block color="secondary">
+    <ion-icon name="add"></ion-icon>
+    ADICIONAR COMENTÁRIO
+  </button>
+</ion-footer>
