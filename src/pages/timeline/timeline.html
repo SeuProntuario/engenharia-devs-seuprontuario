@@ -5,14 +5,23 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>timeline</ion-title>
-  </ion-navbar>
-
+  <ion-navbar> <ion-title>Linha do Tempo</ion-title> </ion-navbar>
 </ion-header>
 
-
 <ion-content padding>
-
+  <ngx-timeline [events]="events">
+    <ng-template timelineFooter let-event="event" let-index="rowIndex">
+      <button
+        ion-button
+        block
+        icon-left
+        small
+        color="secondary"
+        (click)="openDetail(rowIndex)"
+      >
+        <ion-icon name="add"></ion-icon>
+        Detalhes
+      </button>
+    </ng-template>
+  </ngx-timeline>
 </ion-content>

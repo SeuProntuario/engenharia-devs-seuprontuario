@@ -18,7 +18,13 @@
   <ion-grid>
     <ion-row>
       <ion-col col-6>
-        <button ion-button icon-left block color="secondary">
+        <button
+          ion-button
+          icon-left
+          block
+          color="secondary"
+          (click)="openNew()"
+        >
           <ion-icon name="custom-calendar"></ion-icon>
           Adicionar
         </button>

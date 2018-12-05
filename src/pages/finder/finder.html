@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar> <ion-title>Marcar Consulta</ion-title> </ion-navbar>
+  <ion-navbar> <ion-title>Marcar Exame</ion-title> </ion-navbar>
   <ion-toolbar>
     <ion-segment color="secondary" [(ngModel)]="show">
       <ion-segment-button value="find"> ENCONTRAR </ion-segment-button>
@@ -7,18 +7,20 @@
     </ion-segment>
   </ion-toolbar>
   <ion-item color="secondary" no-lines>
-    <ion-searchbar
-      placeholder="Procurar consultas"
-      (ionInput)="getItems($event)"
-    ></ion-searchbar>
+    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
   </ion-item>
 </ion-header>
 
 <ion-content no-padding>
   <div [ngSwitch]="show">
     <ion-list no-lines *ngSwitchCase="'find'">
-      <button ion-item *ngFor="let opt of options">
-        <ion-thumbnail style="width: 2%" item-start>
+      <button
+        [color]="opt.name == 'EMERGÊNCIA' ? 'danger' : ''"
+        ion-item
+        *ngFor="let opt of options"
+        (click)="openPage(opt.component)"
+      >
+        <ion-thumbnail item-start>
           <img width="15px" color="secondary" [src]="opt.avatar" />
         </ion-thumbnail>
         <h2>{{ opt.name }}</h2>

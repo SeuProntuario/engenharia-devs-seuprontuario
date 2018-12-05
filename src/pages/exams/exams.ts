@@ -57,6 +57,10 @@ export class ExamsPage {
     console.log("ionViewDidLoad ExamsPage");
   }
 
+  openNew() {
+    this.navCtrl.push("ExamNewPage");
+  }
+
   openExam(exam) {
     this.navCtrl.push("ExamDetailPage", { exam: exam });
   }

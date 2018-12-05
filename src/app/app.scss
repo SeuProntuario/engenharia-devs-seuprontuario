@@ -45,6 +45,9 @@ ion-icon {
   &[class*="custom-hospital"] {
     mask-image: url(../assets/icon/hospital.svg);
   }
+  &[class*="custom-hospital-building"] {
+    mask-image: url("../assets/icon/hospital (1).svg");
+  }
   &[class*="custom-chat"] {
     mask-image: url(../assets/icon/chat.svg);
   }

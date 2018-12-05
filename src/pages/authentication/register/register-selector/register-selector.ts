@@ -14,6 +14,12 @@ import { IonicPage, NavController, NavParams } from "ionic-angular";
   templateUrl: "register-selector.html"
 })
 export class RegisterSelectorPage {
+  slide = {
+    title: "Bem-vindo ao Seu Prontuário!",
+    description:
+      "O <b>Seu Prontuário</b> é o ambiente interativo que reune soluções para Pacientes, Médicos e Consultórios na realização de procedimentos de consulta e acompanhamento.",
+    image: "assets/icon/icon_transp.png"
+  };
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {

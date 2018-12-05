@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar> <ion-title>Marcar Consulta</ion-title> </ion-navbar>
+  <ion-navbar> <ion-title>Marcar Exame</ion-title> </ion-navbar>
   <ion-toolbar>
     <ion-segment color="secondary" [(ngModel)]="show">
       <ion-segment-button value="find"> ENCONTRAR </ion-segment-button>
@@ -8,7 +8,7 @@
   </ion-toolbar>
   <ion-item color="secondary" no-lines>
     <ion-searchbar
-      placeholder="Procurar consultas"
+      placeholder="Procurar exames"
       (ionInput)="getItems($event)"
     ></ion-searchbar>
   </ion-item>

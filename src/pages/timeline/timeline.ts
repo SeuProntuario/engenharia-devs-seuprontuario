@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component } from "@angular/core";
+import { IonicPage, NavController, NavParams } from "ionic-angular";
+import { TimelineEvent } from "ngx-timeline";
 
 /**
  * Generated class for the TimelinePage page.
@@ -10,16 +11,36 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-timeline',
-  templateUrl: 'timeline.html',
+  selector: "page-timeline",
+  templateUrl: "timeline.html"
 })
 export class TimelinePage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  events: Array<TimelineEvent>;
+  event: TimelineEvent;
+  rowIndex = "";
+  constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad TimelinePage');
+    this.events = new Array<TimelineEvent>();
+    this.events.push({
+      date: new Date(),
+      header: "Consulta",
+      body: "Laboratório São Lucas\nDr. Emílio"
+    });
+    this.events.push({
+      date: new Date(),
+      header: "Exame",
+      body: "Laboratório São Lucas\nDr. Emílio"
+    });
+    this.events.push({
+      date: new Date(),
+      header: "Seção de Fisioterapia",
+      body: "Clínica do Coração\nDr. Emílio"
+    });
   }
 
+  openDetail(event) {
+    console.log(event);
+    this.navCtrl.push("EventDetailPage", { event: event });
+  }
 }

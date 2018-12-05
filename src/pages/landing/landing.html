@@ -1,43 +1,30 @@
-<ion-content padding>
-  <ion-slides pager>
+<ion-content no-padding>
+  <ion-slides>
     <ion-slide *ngFor="let slide of slides">
-      <ion-toolbar>
-        <ion-buttons end>
-          <button ion-button color="secondary" (click)="open('LoginPage')">
-            Pular
-          </button>
-        </ion-buttons>
-      </ion-toolbar>
       <img [src]="slide.image" class="slide-image" />
       <h2 class="slide-title" [innerHTML]="slide.title"></h2>
       <p [innerHTML]="slide.description"></p>
     </ion-slide>
-    <ion-slide>
-      <ion-toolbar> </ion-toolbar>
-      <img src="assets/img/ica-slidebox-img-4.png" class="slide-image" />
-      <h2 class="slide-title">Primeiro uso?</h2>
+  </ion-slides>
+</ion-content>
+
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+      <button ion-button block color="secondary" (click)="open('LoginPage')">
+        ENTRAR
+      </button>
+    </ion-row>
+    <p text-center no-margin>ou</p>
+    <ion-row>
       <button
         ion-button
-        large
-        clear
-        icon-end
+        block
         color="secondary"
         (click)="open('RegisterSelectorPage')"
       >
-        Fazer cadastro
-        <ion-icon name="arrow-forward"></ion-icon>
+        CADASTRAR
       </button>
-      <button
-        ion-button
-        large
-        clear
-        icon-end
-        color="secondary"
-        (click)="open('LoginPage')"
-      >
-        Fazer login
-        <ion-icon name="arrow-forward"></ion-icon>
-      </button>
-    </ion-slide>
-  </ion-slides>
-</ion-content>
+    </ion-row>
+  </ion-grid>
+</ion-footer>
