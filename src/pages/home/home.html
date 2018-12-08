@@ -16,123 +16,89 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content no-padding>
-  <ion-grid>
-    <ion-row>
-      <ion-card>
+<ion-content no-padding style="height: 100%">
+  <ion-grid style="height: 100%">
+    <ion-row style="height: fit-content">
+      <ion-card class="next-event">
         <ion-card-content no-padding>
-          <ion-item color="secondary">
+          <ion-item color="secondary" style="flex:8;">
             <p style="font-weight: bold;" text-uppercase>Próximo evento</p>
-            <h2>{{ nextEvent.local }}</h2>
+            <h2 style="color: white">{{ nextEvent.local }}</h2>
             <p>{{ nextEvent.description }}</p>
-            <ion-note text-right color="dark" item-end
-              >{{ nextEvent.hour }} <br />
-              {{ nextEvent.date }}</ion-note
-            >
-            <!--
-              <ion-note color="light" item-end>{{ nextEvent.date }}</ion-note>
-            -->
           </ion-item>
+          <ion-item
+            color="secondary"
+            style="flex: 3; padding-left: 0; text-align: right"
+          >
+            {{ nextEvent.hour }}<br />
+            {{ nextEvent.date }}
+          </ion-item>
+          <!--
+            <ion-note color="light" item-end>{{ nextEvent.date }}</ion-note>
+          -->
         </ion-card-content>
       </ion-card>
     </ion-row>
-    <ion-row>
-      <ion-col col-6
-        ><button
-          (click)="openPage('TimelinePage')"
-          color="secondary"
-          outline
-          large
-          block
-          ion-button
-          icon-only
-        >
-          <ion-icon name="custom-timeline"></ion-icon>
-        </button>
-        <ion-label color="grey" text-center no-margin text-wrap stacked
-          >Linha do Tempo</ion-label
-        >
+    <ion-row class="home-item-father" style="height: 100%">
+      <ion-col col-6 (click)="openPage('TimelinePage')" class="home-item">
+        <div class="home-item-holder">
+          <div>
+            <ion-icon name="custom-timeline" color="secondary"></ion-icon>
+            <ion-label color="grey" text-center no-margin text-wrap stacked
+              >Linha do Tempo</ion-label
+            >
+          </div>
+        </div>
       </ion-col>
-      <ion-col col-6
-        ><button
-          (click)="openPage('EnchiridionPage')"
-          color="secondary"
-          outline
-          large
-          block
-          ion-button
-          icon-only
-        >
-          <ion-icon name="custom-history"></ion-icon>
-        </button>
-        <ion-label color="grey" text-center no-margin text-wrap stacked
-          >Meus Prontuários</ion-label
-        >
+      <ion-col col-6 (click)="openPage('EnchiridionPage')" class="home-item">
+        <div class="home-item-holder">
+          <div>
+            <ion-icon name="custom-history" color="secondary"></ion-icon>
+            <ion-label color="grey" text-center no-margin text-wrap stacked
+              >Meus Prontuários</ion-label
+            >
+          </div>
+        </div>
       </ion-col>
-      <ion-col col-6
-        ><button
-          (click)="openPage('ExamsPage')"
-          color="secondary"
-          outline
-          large
-          block
-          ion-button
-          icon-only
-        >
-          <ion-icon name="custom-exams"></ion-icon>
-        </button>
-        <ion-label color="grey" text-center no-margin text-wrap stacked
-          >Meus Exames</ion-label
-        >
+      <ion-col col-6 (click)="openPage('ExamsPage')" class="home-item">
+        <div class="home-item-holder">
+          <div>
+            <ion-icon name="custom-exams" color="secondary"></ion-icon>
+            <ion-label color="grey" text-center no-margin text-wrap stacked
+              >Meus Exames</ion-label
+            >
+          </div>
+        </div>
       </ion-col>
-      <ion-col col-6
-        ><button
-          (click)="openPage('ConsultationPage')"
-          color="secondary"
-          outline
-          large
-          block
-          ion-button
-          icon-only
-        >
-          <ion-icon name="custom-medic"></ion-icon>
-        </button>
-        <ion-label color="grey" text-center no-margin text-wrap stacked
-          >Minhas Consultas</ion-label
-        >
+      <ion-col col-6 (click)="openPage('ConsultationPage')" class="home-item">
+        <div class="home-item-holder">
+          <div>
+            <ion-icon name="custom-medic" color="secondary"></ion-icon>
+            <ion-label color="grey" text-center no-margin text-wrap stacked
+              >Minhas Consultas</ion-label
+            >
+          </div>
+        </div>
       </ion-col>
-      <ion-col col-6
-        ><button
-          (click)="openPage('AccountPage')"
-          color="secondary"
-          outline
-          large
-          block
-          ion-button
-          icon-only
-        >
-          <ion-icon name="custom-notes"></ion-icon>
-        </button>
-        <ion-label color="grey" text-center no-margin text-wrap stacked
-          >Meu Cadastro</ion-label
-        >
+      <ion-col col-6 (click)="openPage('AccountPage')" class="home-item">
+        <div class="home-item-holder">
+          <div>
+            <ion-icon name="custom-notes" color="secondary"></ion-icon>
+            <ion-label color="grey" text-center no-margin text-wrap stacked
+              >Meu Cadastro</ion-label
+            >
+          </div>
+        </div>
       </ion-col>
-
-      <ion-col col-6
-        ><button
-          (click)="openPage('FinderPage')"
-          color="secondary"
-          outline
-          large
-          block
-          ion-button
-          icon-only
-        >
-          <ion-icon name="custom-hospital"></ion-icon>
-        </button>
-        <ion-label color="grey" text-center no-margin text-wrap stacked
-          >Médicos/Clínicas/Hospitais/Farmácias</ion-label
-        >
+      <ion-col col-6 (click)="openPage('FinderPage')" class="home-item">
+        <div class="home-item-holder">
+          <div>
+            <ion-icon name="custom-hospital" color="secondary"></ion-icon>
+            <ion-label color="grey" text-center no-margin text-wrap stacked
+              >Médicos / Clínicas / Hospitais / Farmácias</ion-label
+            >
+          </div>
+        </div>
       </ion-col>
     </ion-row>
   </ion-grid>
@@ -141,66 +107,76 @@
 <ion-footer>
   <ion-grid>
     <ion-row>
-      <ion-col col-3>
-        <button
-          (click)="openPage('DependentsPage')"
-          color="light"
-          large
-          block
-          ion-button
-          icon-only
+      <ion-col col-3 style="padding: 5px">
+        <div
+          style="background: #fff; height: 100%; padding: 5px; border-radius: 5px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.14);"
         >
-          <ion-icon name="custom-family"></ion-icon>
-        </button>
-        <ion-label color="grey" text-center no-margin text-wrap stacked
-          >Meus Dependentes</ion-label
-        >
+          <div (click)="openPage('DependentsPage')" style="text-align: center">
+            <ion-icon
+              name="custom-family"
+              color="secondary"
+              style="font-size: 40px;"
+            ></ion-icon>
+          </div>
+          <ion-label color="grey" text-center no-margin text-wrap stacked
+            >Meus Dependentes</ion-label
+          >
+        </div>
       </ion-col>
-      <ion-col col-3>
-        <button
-          (click)="openPage('CovenantPage')"
-          color="light"
-          large
-          block
-          ion-button
-          icon-only
+      <ion-col col-3 style="padding: 5px">
+        <div
+          style="background: #fff; height: 100%; padding: 5px; border-radius: 5px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.14);"
         >
-          <ion-icon name="custom-id-card"></ion-icon>
-        </button>
-        <ion-label color="grey" text-center no-margin text-wrap stacked
-          >Cartão SUS e Convênios</ion-label
-        >
+          <div (click)="openPage('CovenantPage')" style="text-align: center">
+            <ion-icon
+              name="custom-id-card"
+              color="secondary"
+              style="font-size: 40px;"
+            ></ion-icon>
+          </div>
+          <ion-label color="grey" text-center no-margin text-wrap stacked
+            >Cartão SUS e Convênios</ion-label
+          >
+        </div>
       </ion-col>
-      <ion-col col-3>
-        <button
-          (click)="openPage('VaccinationPage')"
-          color="light"
-          large
-          block
-          ion-button
-          icon-only
+      <ion-col col-3 style="padding: 5px">
+        <div
+          style="background: #fff; height: 100%; padding: 5px; border-radius: 5px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.14);"
         >
-          <ion-icon name="custom-syringe"></ion-icon>
-        </button>
-        <ion-label color="grey" text-center no-margin text-wrap stacked
-          >Minhas Vacinas</ion-label
-        >
+          <div (click)="openPage('VaccinationPage')" style="text-align: center">
+            <ion-icon
+              name="custom-syringe"
+              color="secondary"
+              style="font-size: 40px;"
+            ></ion-icon>
+          </div>
+          <ion-label color="grey" text-center no-margin text-wrap stacked
+            >Minhas Vacinas</ion-label
+          >
+        </div>
       </ion-col>
-      <ion-col col-3>
-        <button
-          (click)="openPage('ChatPage')"
-          color="light"
-          large
-          block
-          ion-button
-          icon-only
+      <ion-col col-3 style="padding: 5px">
+        <div
+          style="background: #fff; height: 100%; padding: 5px; border-radius: 5px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.14);"
         >
-          <ion-icon name="custom-chat"></ion-icon>
-          <ion-badge *ngIf="n" color="accent">{{ n }}</ion-badge>
-        </button>
-        <ion-label color="grey" text-center no-margin text-wrap stacked
-          >Minhas Conversas</ion-label
-        >
+          <div (click)="openPage('ChatPage')" style="text-align: center">
+            <ion-icon
+              name="custom-chat"
+              color="secondary"
+              style="font-size: 40px;"
+            ></ion-icon>
+            <ion-badge
+              style="background-color: red;
+            border-radius: 100%; width: 20px; height: 20px; padding-left: 6.5px; padding-top: 4px"
+              *ngIf="n"
+              color="accent"
+              >{{ n }}</ion-badge
+            >
+          </div>
+          <ion-label color="grey" text-center no-margin text-wrap stacked
+            >Minhas Conversas</ion-label
+          >
+        </div>
       </ion-col>
     </ion-row>
   </ion-grid>
