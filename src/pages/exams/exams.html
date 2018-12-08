@@ -9,12 +9,12 @@
 </ion-header>
 
 <ion-content no-padding>
-  <ion-item color="secondary" no-lines>
+  <div class="search-bar" color="secondary" no-lines>
     <ion-searchbar
-      placeholder="Buscar"
+      placeholder="Pesquisar..."
       (ionInput)="getItems($event)"
     ></ion-searchbar>
-  </ion-item>
+  </div>
   <ion-grid>
     <ion-row>
       <ion-col col-6>
@@ -42,7 +42,7 @@
     <ion-card-header> {{ exam.name }}</ion-card-header>
     <ion-card-content no-padding>
       <ion-row>
-        <ion-col col-7>
+        <ion-col col-7 class="description">
           <h2>{{ exam.local }}</h2>
           <h3>{{ exam.medic }}</h3>
           <p>{{ exam.date }} às {{ exam.hour }}</p>
