@@ -4,8 +4,11 @@
       <button (click)="openPage('')" ion-button menuToggle><ion-icon name="menu"></ion-icon></button>
       <ion-title>Home</ion-title>
     -->
-    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
-    <ion-item>
+    <ion-searchbar
+      (ionInput)="getItems($event)"
+      placeholder="Pesquisar..."
+    ></ion-searchbar>
+    <ion-item style="background: #f9f9f9">
       <ion-label>Ver como: </ion-label>
       <ion-select [(ngModel)]="optionSelected">
         <ion-option *ngFor="let option of options" [value]="option.value">{{
@@ -28,7 +31,7 @@
           </ion-item>
           <ion-item
             color="secondary"
-            style="flex: 3; padding-left: 0; text-align: right"
+            style="flex: 5; padding-left: 0; text-align: right"
           >
             {{ nextEvent.hour }}<br />
             {{ nextEvent.date }}
