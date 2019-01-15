@@ -46,6 +46,7 @@ export class HomePage {
     public navParams: NavParams,
     public menuCtrl: MenuController
   ) {
+    this.optionSelected = "patient";
     this.menuCtrl.enable(true, "authenticated");
   }
 

@@ -1,0 +1,104 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title *ngIf="ench">{{ ench.header }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+  <ion-item no-lines color="secondary" *ngIf="ench">
+    <ion-avatar item-right>
+      <img src="assets/icon/avatar (1).svg" />
+    </ion-avatar>
+    <h2>{{ ench.header }}</h2>
+    <h2>{{ ench.body }}</h2>
+    <!-- <p>{{ ench.date }} às {{ ench.hour }}</p> -->
+  </ion-item>
+
+  <ion-card>
+    <ion-card-header> Consultas Anteiores </ion-card-header>
+    <ion-card-content no-padding>
+      <ion-item *ngFor="let date of dates" no-lines>
+        <h3>{{ date.value | date: "medium" }}</h3>
+        <button
+          (click)="open('EnchiridionPage')"
+          color="secondary"
+          ion-button
+          item-end
+        >
+          Visualizar
+        </button>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list-header> Histórico </ion-list-header>
+
+  <ion-card>
+    <ion-card-header> ERNESTO DA SILVA </ion-card-header>
+    <ion-card-content>
+      <p ion-text color="grey">comentado há 2 dias</p>
+      Lorem aliqua magna sit sunt. Exercitation quis in consequat et eiusmod do
+      commodo laboris.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header> Dr. EMÍLIO </ion-card-header>
+    <ion-card-content>
+      <p ion-text color="grey">comentado há 2 dias</p>
+      Lorem aliqua magna sit sunt. Exercitation quis in consequat et eiusmod do
+      commodo laboris.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header> ERNESTO DA SILVA </ion-card-header>
+    <ion-card-content>
+      <p ion-text color="grey">Anexou um exame a um dia</p>
+    </ion-card-content>
+    <ion-row>
+      <ion-col>
+        <button ion-button small color="secondary" (click)="openExam()">
+          Visualizar
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header> ERNESTO DA SILVA </ion-card-header>
+    <ion-card-content>
+      <p ion-text color="grey">comentado há 2 dias</p>
+      Já anexei o exame caso queira dá uma olhada
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-navbar>
+    <ion-input
+      automcomplete="on"
+      autocorrect="on"
+      text-wrap
+      type="text"
+      placeholder="Mensagem..."
+      [(ngModel)]="message"
+    ></ion-input>
+    <ion-buttons end>
+      <button ion-button icon-left (click)="comment()">
+        <ion-icon name="send"></ion-icon>
+        Comentar
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <!-- <ion-grid>
+    <ion-row>
+      <ion-col>
+        <button ion-button block color="secondary" icon-left>
+          <ion-icon name="add"></ion-icon>
+          Adicionar Comentário
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid> -->
+</ion-footer>

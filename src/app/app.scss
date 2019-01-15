@@ -64,6 +64,12 @@ ion-icon {
   &[class*="custom-family"] {
     mask-image: url(../assets/icon/family.svg);
   }
+  &[class*="custom-pills"] {
+    mask-image: url(../assets/icon/pills.svg);
+  }
+  &[class*="custom-contract"] {
+    mask-image: url(../assets/icon/contract.svg);
+  }
   &[class*="custom-email"] {
     mask-image: url("../assets/icon/email (1).svg");
   }

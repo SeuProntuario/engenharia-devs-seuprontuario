@@ -1,8 +1,9 @@
 import { NgModule } from "@angular/core";
+import { WipComponent } from './wip/wip';
 
 @NgModule({
-  declarations: [],
+  declarations: [WipComponent],
   imports: [],
-  exports: []
+  exports: [WipComponent]
 })
 export class ComponentsModule {}

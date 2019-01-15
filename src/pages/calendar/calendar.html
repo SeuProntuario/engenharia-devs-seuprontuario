@@ -1,10 +1,10 @@
 <ion-header>
-  <ion-navbar> <ion-title>Linha do Tempo</ion-title> </ion-navbar>
+  <ion-navbar> <ion-title>Calendário</ion-title> </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   <ngx-timeline [events]="events">
-    <ng-template timelineFooter let-event="event" let-index="rowIndex">
+    <ng-template timelineFooter let-event="event" let-rowIndex="rowIndex">
       <button
         ion-button
         block
@@ -13,8 +13,8 @@
         color="secondary"
         (click)="openDetail(rowIndex)"
       >
-        <ion-icon name="add"></ion-icon>
-        Detalhes
+        <ion-icon name="custom-view"></ion-icon>
+        Visualizar
       </button>
     </ng-template>
   </ngx-timeline>
