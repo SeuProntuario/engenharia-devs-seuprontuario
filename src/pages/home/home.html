@@ -42,7 +42,11 @@
         </ion-card-content>
       </ion-card>
     </ion-row>
-    <ion-row class="home-item-father" style="height: 100%">
+    <ion-row
+      class="home-item-father"
+      style="height: 100%"
+      *ngIf="optionSelected == 'patient'"
+    >
       <ion-col col-6 (click)="openPage('TimelinePage')" class="home-item">
         <div class="home-item-holder">
           <div>
@@ -104,11 +108,78 @@
         </div>
       </ion-col>
     </ion-row>
+
+    <ion-row
+      class="home-item-father"
+      style="height: 100%"
+      *ngIf="optionSelected == 'professional'"
+    >
+      <ion-col col-6 (click)="openPage('CalendarPage')" class="home-item">
+        <div class="home-item-holder">
+          <div>
+            <ion-icon name="custom-timeline" color="secondary"></ion-icon>
+            <ion-label color="grey" text-center no-margin text-wrap stacked
+              >Calendário</ion-label
+            >
+          </div>
+        </div>
+      </ion-col>
+      <ion-col col-6 (click)="openPage('AnamenesePage')" class="home-item">
+        <div class="home-item-holder">
+          <div>
+            <ion-icon name="custom-history" color="secondary"></ion-icon>
+            <ion-label color="grey" text-center no-margin text-wrap stacked
+              >Anamenese</ion-label
+            >
+          </div>
+        </div>
+      </ion-col>
+      <ion-col col-6 (click)="openPage('ConsultationHistoryPage')" class="home-item">
+        <div class="home-item-holder">
+          <div>
+            <ion-icon name="custom-exams" color="secondary"></ion-icon>
+            <ion-label color="grey" text-center no-margin text-wrap stacked
+              >Histórico de Consultas</ion-label
+            >
+          </div>
+        </div>
+      </ion-col>
+      <ion-col col-6 (click)="openPage('ReferralPage')" class="home-item">
+        <div class="home-item-holder">
+          <div>
+            <ion-icon name="custom-medic" color="secondary"></ion-icon>
+            <ion-label color="grey" text-center no-margin text-wrap stacked
+              >Encaminhamentos</ion-label
+            >
+          </div>
+        </div>
+      </ion-col>
+      <ion-col col-6  class="home-item">
+        <div class="home-item-holder">
+          <div>
+            <ion-icon name="custom-notes" color="secondary"></ion-icon>
+            <ion-label color="grey" text-center no-margin text-wrap stacked
+              >Declaração</ion-label
+            >
+          </div>
+        </div>
+      </ion-col>
+      <ion-col col-6 (click)="openPage('FinderPage')" class="home-item">
+        <div class="home-item-holder">
+          <div>
+            <ion-icon name="custom-hospital" color="secondary"></ion-icon>
+            <ion-label color="grey" text-center no-margin text-wrap stacked
+              >Atestados</ion-label
+            >
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
   </ion-grid>
 </ion-content>
 
 <ion-footer>
-  <ion-grid>
+  <ion-grid *ngIf="optionSelected == 'patient'">
     <ion-row>
       <ion-col col-3 style="padding: 5px">
         <div
@@ -159,6 +230,66 @@
         </div>
       </ion-col>
       <ion-col col-3 style="padding: 5px">
+        <div
+          style="background: #fff; height: 100%; padding: 5px; border-radius: 5px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.14);"
+        >
+          <div (click)="openPage('ChatPage')" style="text-align: center">
+            <ion-icon
+              name="custom-chat"
+              color="secondary"
+              style="font-size: 40px;"
+            ></ion-icon>
+            <ion-badge
+              style="background-color: red;
+            border-radius: 100%; width: 20px; height: 20px; padding-left: 6.5px; padding-top: 4px"
+              *ngIf="n"
+              color="accent"
+              >{{ n }}</ion-badge
+            >
+          </div>
+          <ion-label color="grey" text-center no-margin text-wrap stacked
+            >Minhas Conversas</ion-label
+          >
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid *ngIf="optionSelected == 'professional'">
+    <ion-row>
+      <ion-col col-4 style="padding: 5px">
+        <div
+          style="background: #fff; height: 100%; padding: 5px; border-radius: 5px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.14);"
+        >
+          <div (click)="openPage('AccountPage')" style="text-align: center">
+            <ion-icon
+              name="custom-contract"
+              color="secondary"
+              style="font-size: 40px;"
+            ></ion-icon>
+          </div>
+          <ion-label color="grey" text-center no-margin text-wrap stacked
+            >Meu Cadastro</ion-label
+          >
+        </div>
+      </ion-col>
+      <ion-col col-4 style="padding: 5px">
+        <div
+          style="background: #fff; height: 100%; padding: 5px; border-radius: 5px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.14);"
+        >
+          <div style="text-align: center">
+            <ion-icon
+              name="custom-pills"
+              color="secondary"
+              style="font-size: 40px;"
+            ></ion-icon>
+          </div>
+          <ion-label color="grey" text-center no-margin text-wrap stacked
+            >Receitas</ion-label
+          >
+        </div>
+      </ion-col>
+      <ion-col col-4 style="padding: 5px">
         <div
           style="background: #fff; height: 100%; padding: 5px; border-radius: 5px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.14);"
         >

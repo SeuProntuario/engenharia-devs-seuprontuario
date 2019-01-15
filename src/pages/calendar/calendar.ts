@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { TimelineEvent } from "ngx-timeline";
 
 /**
- * Generated class for the TimelinePage page.
+ * Generated class for the CalendarPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,36 +11,39 @@ import { TimelineEvent } from "ngx-timeline";
 
 @IonicPage()
 @Component({
-  selector: "page-timeline",
-  templateUrl: "timeline.html"
+  selector: "page-calendar",
+  templateUrl: "calendar.html"
 })
-export class TimelinePage {
+export class CalendarPage {
   events: Array<TimelineEvent>;
   event: TimelineEvent;
   rowIndex = "";
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {
+    console.log("ionViewDidLoad CalendarPage");
     this.events = new Array<TimelineEvent>();
     this.events.push({
       date: new Date("December 17, 2018"),
-      header: "Consulta",
-      body: "Laboratório São Lucas\nDr. Emílio"
+      header: "Ernesto da Silva",
+      body: "Retorno - convênio\nDr. Emílio"
     });
     this.events.push({
       date: new Date("December 16, 2018"),
-      header: "Exame",
-      body: "Laboratório São Lucas\nDr. Emílio"
+      header: "José Paulo Silva",
+      body: "Retorno - convênio\nDr. Emílio"
     });
     this.events.push({
       date: new Date("December 19, 2018"),
-      header: "Seção de Fisioterapia",
-      body: "Clínica do Coração\nDr. Emílio"
+      header: "Maria Conceição de Paula",
+      body: "Retorno - SUS\nDr. Emílio"
     });
   }
 
   openDetail(event) {
     console.log(event);
-    this.navCtrl.push("EventDetailPage", { event: event });
+    let newEvent = this.events[event];
+    console.log(newEvent);
+    this.navCtrl.push("PatientDetailPage", { ench: newEvent });
   }
 }
